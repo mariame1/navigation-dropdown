@@ -1,13 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Heebo:wght@100..900&family=Inter:wght@100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+img{
+  max-width: 100%;
+}
+ul{
+  list-style-type: none;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Epilogue",sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p,
+li
+{
+  @apply bg-opacity-75;
 }
+
+.navbar{
+  position: absolute;
+  top: -100%;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  padding: 1rem;
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.navbar.open{
+  top: 4rem;
+  z-index: 99;
+  background-color: #fff;
+}
+
+.attribution { 
+  font-size: 11px;
+   text-align: center;
+  margin-top: 5rem; }
+   
+    .attribution a { 
+      color: hsl(228, 45%, 44%); 
+    }
+
+@media (min-width: 1024px){
+  .navbar{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    width: auto;
+    padding: 0;
+    z-index: auto;
+    background-color: transparent;
+  }
+  .navbar.open{
+    top: 0;
+    background-color: transparent;
+    z-index: auto;
+  }
+  .navbar div{
+    @apply mr-10
+  }
+  .navbar div ul{
+    position: absolute;
+    width: 12rem;
+  }
+}
+
+
